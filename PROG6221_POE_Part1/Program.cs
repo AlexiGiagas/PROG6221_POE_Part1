@@ -9,10 +9,7 @@ namespace PROG6221_POE_Part1
         
         static void Main(string[] args)
         {
-            Ingredients ingredients = new Ingredients();
-
-            Steps steps = new Steps();
-            
+            Menu menu = new Menu();
         }
     }
 }

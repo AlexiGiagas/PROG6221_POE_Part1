@@ -45,6 +45,10 @@ namespace PROG6221_POE_Part1
             {
                 unitOfIngredients[i] = Console.ReadLine();
             }
+
+            Console.Clear();
+
+            Menu menu = new Menu();
         }
     }
 }
