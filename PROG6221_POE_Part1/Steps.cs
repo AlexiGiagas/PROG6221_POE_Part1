@@ -19,7 +19,18 @@ namespace PROG6221_POE_Part1
                 numOfSteps[i] = Convert.ToInt32(Console.ReadLine());
             }
 
+            string[] descOfSteps = new string[numOfSteps[0]];
 
+            Console.WriteLine("Please list each step:");
+
+            for (int i = 0; i < descOfSteps.Length; i++)
+            {
+                descOfSteps[i] = Console.ReadLine();
+            }
+
+            Console.Clear();
+
+            Menu menu = new Menu();
         }
     }
 }
