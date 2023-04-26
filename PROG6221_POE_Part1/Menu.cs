@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PROG6221_POE_Part1
 {
@@ -14,7 +15,8 @@ namespace PROG6221_POE_Part1
             Console.WriteLine("1. Enter the Ingredients for the recipe.");
             Console.WriteLine("2. Enter the Steps for the recipe.");
             Console.WriteLine("3. Review the recipe.");
-            
+            Console.WriteLine("0. Exit.");
+
             int selection = Convert.ToInt32(Console.ReadLine());
 
             Console.Clear();
@@ -32,6 +34,11 @@ namespace PROG6221_POE_Part1
             else if (selection == 3)
             {
                 Recipe recipe = new Recipe();
+            }
+
+            else if (selection == 0)
+            {
+                Environment.Exit(0);
             }
         }
     }

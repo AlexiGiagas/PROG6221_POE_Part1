@@ -8,6 +8,9 @@ namespace PROG6221_POE_Part1
 {
     class Steps
     {
+        public static int[] numOfSteps = new int[1];
+        public static string[] descOfSteps = new string[numOfSteps[0]];
+
         public Steps()
         {
             int[] numOfSteps = new int[1];

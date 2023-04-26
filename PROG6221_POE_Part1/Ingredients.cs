@@ -8,6 +8,11 @@ namespace PROG6221_POE_Part1
 {
     class Ingredients
     {
+        public static int[] numOfIngredients = new int[1];
+        public static string[] nameOfIngredients = new string[numOfIngredients[0]];
+        public static int[] quantOfIngredients = new int[numOfIngredients[0]];
+        public static string[] unitOfIngredients = new string[numOfIngredients[0]];
+
         public Ingredients()
         {
             int[] numOfIngredients = new int[1];
