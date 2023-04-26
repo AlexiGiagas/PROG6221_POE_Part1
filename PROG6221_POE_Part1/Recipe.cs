@@ -8,6 +8,9 @@ namespace PROG6221_POE_Part1
 {
     class Recipe
     {
-
+        public Recipe()
+        {
+            Console.WriteLine();
+        }
     }
 }
