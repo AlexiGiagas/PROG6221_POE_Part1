@@ -21,7 +21,7 @@ namespace PROG6221_POE_Part1
 
             string[] descOfSteps = new string[numOfSteps[0]];
 
-            Console.WriteLine("Please list each step:");
+            Console.WriteLine("Please enter a description for each step:");
 
             for (int i = 0; i < descOfSteps.Length; i++)
             {
