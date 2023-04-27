@@ -92,7 +92,13 @@ namespace PROG6221_POE_Part1
 
         static void ScaleRecipe(Recipe recipe)
         {
-            
+            Console.WriteLine("\nEnter the scaling factor (0.5, 2, or 3):");
+            double factor = double.Parse(Console.ReadLine());
+
+            foreach (Ingredients ingredient in recipe.Ingredients)
+            {
+                ingredient.Quantity *= factor;
+            }
         }
 
         static void ResetScaling(Recipe recipe)
