@@ -43,7 +43,23 @@ namespace PROG6221_POE_Part1
 
         static Recipe CreateRecipe()
         {
-            
+            Recipe recipe = new Recipe();
+
+            Console.WriteLine("Enter the number of ingredients:");
+            int numIngredients = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numIngredients; i++)
+            {
+                Console.WriteLine($"\nIngredient {i + 1}:");
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Quantity: ");
+                double quantity = double.Parse(Console.ReadLine());
+                Console.Write("Unit of measurement: ");
+                string unit = Console.ReadLine();
+
+                recipe.Ingredients.Add(new Ingredients(name, quantity, unit));
+             
         }
 
         static void DisplayRecipe(Recipe recipe)
