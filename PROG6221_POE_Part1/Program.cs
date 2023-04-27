@@ -103,7 +103,12 @@ namespace PROG6221_POE_Part1
 
         static void ResetScaling(Recipe recipe)
         {
-            
+            foreach (Ingredients ingredient in recipe.Ingredients)
+            {
+                ingredient.Quantity /= recipe.ScaleFactor;
+            }
+
+            recipe.ScaleFactor = 1;
         }
     }
 }
