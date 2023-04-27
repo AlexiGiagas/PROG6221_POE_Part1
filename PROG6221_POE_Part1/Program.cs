@@ -59,12 +59,35 @@ namespace PROG6221_POE_Part1
                 string unit = Console.ReadLine();
 
                 recipe.Ingredients.Add(new Ingredients(name, quantity, unit));
-             
+                Console.WriteLine("\nEnter the number of steps:");
+                int numSteps = int.Parse(Console.ReadLine());
+
+                for (int i = 0; i < numSteps; i++)
+                {
+                    Console.WriteLine($"\nStep {i + 1}:");
+                    string description = Console.ReadLine();
+                    recipe.Steps.Add(description);
+                }
+                Console.Clear();
+                return recipe;
+            }
         }
 
         static void DisplayRecipe(Recipe recipe)
         {
-            
+            Console.WriteLine("\nRECIPE\n");
+
+            foreach (Ingredients ingredient in recipe.Ingredients)
+            {
+                Console.WriteLine($"{ingredient.Quantity} {ingredient.Unit} {ingredient.Name}");
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < recipe.Steps.Count; i++)
+            {
+                Console.WriteLine($"Step {i + 1}: {recipe.Steps[i]}");
+            }
         }
 
         static void ScaleRecipe(Recipe recipe)
