@@ -12,28 +12,37 @@ namespace PROG6221_POE_Part1
 
             while (true)
             {
-                Console.WriteLine("\nEnter 'new' to start a new recipe, 'scale' to scale the recipe, 'reset' to reset the scaling, or 'exit' to quit.");
+                Console.WriteLine("\nEnter '1' to start a new recipe." +
+                    "\nEnter '2' to scale the recipe." +
+                    "\nEnter '3' to reset the scaling." +
+                    "\nEnter '0' to quit.");
                 string input = Console.ReadLine();
 
-                if (input == "new")
+                Console.Clear();
+
+                if (input == "1")
                 {
                     recipe = CreateRecipe();
                     DisplayRecipe(recipe);
                 }
-                else if (input == "scale")
+
+                else if (input == "2")
                 {
                     ScaleRecipe(recipe);
                     DisplayRecipe(recipe);
                 }
-                else if (input == "reset")
+
+                else if (input == "3")
                 {
                     ResetScaling(recipe);
                     DisplayRecipe(recipe);
                 }
-                else if (input == "exit")
+
+                else if (input == "0")
                 {
                     break;
                 }
+
                 else
                 {
                     Console.WriteLine("Invalid input. Please try again.");
@@ -59,22 +68,26 @@ namespace PROG6221_POE_Part1
                 string unit = Console.ReadLine();
 
                 recipe.Ingredients.Add(new Ingredients(name, quantity, unit));
-                Console.WriteLine("\nEnter the number of steps:");
-                int numSteps = int.Parse(Console.ReadLine());
-
-                for (int i = 0; i < numSteps; i++)
-                {
-                    Console.WriteLine($"\nStep {i + 1}:");
-                    string description = Console.ReadLine();
-                    recipe.Steps.Add(description);
-                }
-                Console.Clear();
-                return recipe;
             }
+
+            Console.WriteLine("\nEnter the number of steps:");
+            int numSteps = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numSteps; i++)
+            {
+                Console.WriteLine($"\nStep {i + 1}:");
+                string description = Console.ReadLine();
+                recipe.Steps.Add(description);
+            }
+
+            Console.Clear();
+            return recipe;
         }
 
         static void DisplayRecipe(Recipe recipe)
         {
+            Console.Clear();
+
             Console.WriteLine("\nRECIPE\n");
 
             foreach (Ingredients ingredient in recipe.Ingredients)
@@ -92,9 +105,9 @@ namespace PROG6221_POE_Part1
 
         static void ScaleRecipe(Recipe recipe)
         {
-            Console.WriteLine("\nEnter the scaling factor (0.5, 2, or 3):");
+            Console.WriteLine("\nEnter the scaling factor (2 or 3):");
             double factor = double.Parse(Console.ReadLine());
-
+            
             foreach (Ingredients ingredient in recipe.Ingredients)
             {
                 ingredient.Quantity *= factor;
